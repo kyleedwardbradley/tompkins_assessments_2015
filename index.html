@@ -71,8 +71,20 @@
     for (var i in data) {
       var row = data[i];
 
+      var this_val=row.pct_2023      
+      var mycolor=''
+      
+      if (this_val < 0) {
+        mycolor='#0000ff'
+      } else if (this_val < 1) {
+        var mycolor_hex=dec.toString(int(this_val * 255))
+        mycolor.concat('#', mycolor_hex, mycolor_hex, mycolor_hex)
+      } else {
+        mycolor='#ff0000'
+      }
+      
       var circleMarker = L.circleMarker([row.lat, row.lon], {
-        color: '#3388ff'
+        color: mycolor
       }).addTo(map);
       
       // var marker = L.marker([row.lat, row.lon], {
