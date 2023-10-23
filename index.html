@@ -56,25 +56,25 @@
 
   // see more basemap options at https://leaflet-extras.github.io/leaflet-providers/preview/
 
-  // Read markers data from data.csv
-  $.get('./final_data_csv_100.csv', function(csvString) {
+  // // Read markers data from data.csv
+  // $.get('./final_data_csv_100.csv', function(csvString) {
 
-    // Use PapaParse to convert string to array of objects
-    var data = Papa.parse(csvString, {header: true, dynamicTyping: true}).data;
+  //   // Use PapaParse to convert string to array of objects
+  //   var data = Papa.parse(csvString, {header: true, dynamicTyping: true}).data;
 
-    // For each row in data, create a marker and add it to the map
-    // For each row, columns `Latitude`, `Longitude`, and `Title` are required
-    for (var i in data) {
-      var row = data[i];
+  //   // For each row in data, create a marker and add it to the map
+  //   // For each row, columns `Latitude`, `Longitude`, and `Title` are required
+  //   for (var i in data) {
+  //     var row = data[i];
 
-      var marker = L.marker([row.lat, row.lon], {
-        opacity: 1
-      }).bindPopup(row.parcel_location_address);
+  //     var marker = L.marker([row.lat, row.lon], {
+  //       opacity: 1
+  //     }).bindPopup(row.parcel_location_address);
       
-      marker.addTo(map);
-    }
+  //     marker.addTo(map);
+  //   }
 
-  });
+  // });
 
   map.attributionControl.setPrefix(
     'View <a href="https://github.com/HandsOnDataViz/leaflet-map-csv" target="_blank">code on GitHub</a>'
