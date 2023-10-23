@@ -61,7 +61,7 @@
   // see more basemap options at https://leaflet-extras.github.io/leaflet-providers/preview/
 
   // Read markers data from data.csv
-  $.get('./final_data_csv_100.csv', function(csvString) {
+  $.get('./final_data_csv.csv', function(csvString) {
 
     // Use PapaParse to convert string to array of objects
     var data = Papa.parse(csvString, {header: true, dynamicTyping: true}).data;
@@ -76,25 +76,25 @@
       
       if (this_val < 0) {
         mycolor='#0000ff'
-      } else if (this_val < 0.1) {
+      } else if (this_val > 0.9) {
         mycolor='#050505'
-      } else if (this_val < 0.2) {
+      } else if (this_val > 0.8) {
         mycolor='#111111'
-      } else if (this_val < 0.3) {
+      } else if (this_val > 0.7) {
         mycolor='#222222'
-      } else if (this_val < 0.4) {
+      } else if (this_val > 0.6) {
         mycolor='#333333'
-      } else if (this_val < 0.5) {
+      } else if (this_val > 0.5) {
         mycolor='#444444'
-      } else if (this_val < 0.6) {
+      } else if (this_val > 0.4) {
         mycolor='#555555'
-      } else if (this_val < 0.7) {
+      } else if (this_val > 0.3) {
         mycolor='#666666'
-      } else if (this_val < 0.8) {
+      } else if (this_val > 0.2) {
         mycolor='#777777'
-      } else if (this_val < 0.9) {
+      } else if (this_val > 0.1) {
         mycolor='#888888'
-      } else if (this_val < 1) {
+      } else if (this_val > 0) {
         mycolor='#999999'
       } else {
         mycolor='#ff0000'
