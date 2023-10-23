@@ -82,15 +82,16 @@
         mycolor='#ff0000'
       }
       
+      // var circleMarker = L.circleMarker([row.lat, row.lon], {
+      //   color: mycolor
+      // }).addTo(map);
+      
       var circleMarker = L.circleMarker([row.lat, row.lon], {
-        color: mycolor
-      }).addTo(map);
+        color: mycolor,
+        opacity: 1
+      }).bindPopup(row.parcel_location_address + ':' + row.pct_2023);
       
-      // var marker = L.marker([row.lat, row.lon], {
-      //   opacity: 1
-      // }).bindPopup(row.parcel_location_address);
-      
-      // marker.addTo(map);
+      circleMarker.addTo(map);
     }
 
   });
