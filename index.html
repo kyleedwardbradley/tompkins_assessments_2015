@@ -107,7 +107,7 @@
       var circleMarker = L.circleMarker([row.lat, row.lon], {
         color: mycolor,
         opacity: 1
-      }).bindPopup(row.parcel_location_address + ':' + row.pct_2023);
+      }).bindPopup(row.parcel_location_address + '</br>' + '% change since 2015: ' + row.pct_2023 + '</br>' + '2023 assessment:' + row.total_av_2023);
       
       circleMarker.addTo(map);
     }
