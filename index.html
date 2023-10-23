@@ -33,7 +33,7 @@
 
   // Set up initial map center and zoom level
   var map = L.map('map', {
-    center: [41.57, -72.69], // EDIT latitude, longitude to re-center map
+    center: [42.42, -76.5], // EDIT latitude, longitude to re-center map
     zoom: 9,  // EDIT from 1 to 18 -- decrease to zoom out, increase to zoom in
     scrollWheelZoom: false,
     tap: false,
@@ -76,9 +76,8 @@
       
       if (this_val < 0) {
         mycolor='#0000ff'
-      } else if (this_val < 1) {
-        var mycolor_hex=dec.toString(int(this_val * 255))
-        mycolor.concat('#', mycolor_hex, mycolor_hex, mycolor_hex)
+      } else if (this_val < 0.5) {
+        mycolor='#00ff00'
       } else {
         mycolor='#ff0000'
       }
