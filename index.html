@@ -33,7 +33,8 @@
     center: [41.57, -72.69], // EDIT latitude, longitude to re-center map
     zoom: 9,  // EDIT from 1 to 18 -- decrease to zoom out, increase to zoom in
     scrollWheelZoom: false,
-    tap: false
+    tap: false,
+    preferCanvas: true
   });
 
   /* Control panel to display map layers */
@@ -67,11 +68,15 @@
     for (var i in data) {
       var row = data[i];
 
-      var marker = L.marker([row.lat, row.lon], {
-        opacity: 1
-      }).bindPopup(row.parcel_location_address);
+      var circleMarker = L.circleMarker([row.lat, row.lon], {
+        color: '#3388ff'
+      }).addTo(map);
       
-      marker.addTo(map);
+      // var marker = L.marker([row.lat, row.lon], {
+      //   opacity: 1
+      // }).bindPopup(row.parcel_location_address);
+      
+      // marker.addTo(map);
     }
 
   });
