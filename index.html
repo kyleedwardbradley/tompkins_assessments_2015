@@ -113,7 +113,7 @@
         weight: 0,
         fillOpacity: 1,
         opacity: 1
-      }).bindPopup(row.parcel_location_address + '</br>' + '% change (2015 to 2023): ' + row.pct_2023 + '</br>' + '2015 assessment: $' + row.total_av_2015 + '</br>' + '2023 assessment: $' + row.total_av_2023);
+      }).bindPopup(row.parcel_location_address + '</br>' + '% change (2015 to 2023): ' + Math.round(row.pct_2023 * 100 * 10) / 10 + '</br>' + '2015 assessment: $' + row.total_av_2015 + '</br>' + '2023 assessment: $' + row.total_av_2023);
     
       circleMarker.addTo(map);
     }
