@@ -110,7 +110,16 @@
         weight: 0,
         fillOpacity: 1,
         opacity: 1
-      }).bindPopup(row.parcel_location_address + '</br>' + '% change (2015 to 2023): ' + Math.round(row.pct_2023 * 100 * 10) / 10 + '</br>' + '2015: $' + row.total_av_2015 + '2016: $' + row.total_av_2016 + '2017: $' + row.total_av_2017 + '2018: $' + row.total_av_2018 + '2019: $' + row.total_av_2019 + '2020: $' + row.total_av_2020 + '2021: $' + row.total_av_2021 + '2022: $' + row.total_av_2022 + '2023: $' + row.total_av_2023);
+      }).bindPopup(row.parcel_location_address + '</br>' + '% change (2015 to 2023): ' + Math.round(row.pct_2023 * 100 * 10) / 10 + '</br>' + 
+                   '2015: $' + row.total_av_2015 + '</br>' + 
+                   '2016: $' + row.total_av_2016 + '</br>' + 
+                   '2017: $' + row.total_av_2017 + '</br>' + 
+                   '2018: $' + row.total_av_2018 + '</br>' + 
+                   '2019: $' + row.total_av_2019 + '</br>' + 
+                   '2020: $' + row.total_av_2020 + '</br>' + 
+                   '2021: $' + row.total_av_2021 + '</br>' + 
+                   '2022: $' + row.total_av_2022 + '</br>' + 
+                   '2023: $' + row.total_av_2023);
     
       circleMarker.addTo(map);
     }
