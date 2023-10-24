@@ -71,26 +71,33 @@
       var this_val=row.pct_2023      
       var mycolor=''
       
-      if (this_val < 0) {
-        mycolor='#0000ff'
-      } else if (this_val > 1) {
-        mycolor='#F05039'
-      } else if (this_val > 0.857) {
-        mycolor='#E57A77'
-      } else if (this_val > 0.714) {
-        mycolor='#EEBAB4'
-      } else if (this_val > 0.571) {
-        mycolor='#A8B6CC'
-      } else if (this_val > 0.429) {
-        mycolor='#7CA1CC'
-      } else if (this_val > 0.286) {
-        mycolor='#3D65A5'
-      } else if (this_val > 0.143) {
-        mycolor='#1F449C'
-      } else if (this_val > 0) {
+      if (this_val > 2) {
         mycolor='#000000'
+      } else if (this_val > .9) {
+        mycolor='#A50026'
+      } else if (this_val > 0.7) {
+        mycolor='#DD3D2D'
+      } else if (this_val > 0.5) {
+        mycolor='#F67E4B'
+      } else if (this_val > 0.3) {
+        mycolor='#FDB366'
+      } else if (this_val > 0.1) {
+        mycolor='#FEDA8B'
+      } else if (this_val > -0.1) {
+        mycolor='#EAECCC'
+      } else if (this_val > -0.3) {
+        mycolor='#C2Е4EF'
+      } else if (this_val > -0.5) {
+        mycolor='#98CAE1'
+      } else if (this_val > -0.7) {
+        mycolor='#6EA6CD'
+      } else if (this_val > -0.9) {
+        mycolor='#4A7BB7'
+      } else if (this_val > -2) {
+        mycolor='#364B94'
       } else {
-        mycolor='#ff0000'
+        // val < -1
+        mycolor='#101010'
       }
       
       // var circleMarker = L.circleMarker([row.lat, row.lon], {
