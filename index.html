@@ -117,6 +117,30 @@
 
   });
 
+// Read markers data from data.csv
+  $.get('./ithaca_geocoded_transactions.csv', function(csvString) {
+
+    // Use PapaParse to convert string to array of objects
+    var data = Papa.parse(csvString, {header: true, dynamicTyping: true}).data;
+
+    // For each row in data, create a marker and add it to the map
+    // For each row, columns `Latitude`, `Longitude`, and `Address` are required
+    for (var i in data) {
+      var row = data[i];
+      
+      var circleMarker = L.circleMarker([row.lat, row.lon], {
+        radius: 10,
+        color: '#000000',
+        weight: 2,
+        fillOpacity: 0,
+        opacity: 1
+      }).bindPopup(row.Address + '</br>' + 'Sale date: ' + row.Date + '</br>' + 'Sale price: $' + row.Price);
+    
+      circleMarker.addTo(map);
+    }
+
+  });
+    
   map.attributionControl.setPrefix(
     'View <a href="https://github.com/HandsOnDataViz/leaflet-map-csv" target="_blank">code on GitHub</a>'
   );
