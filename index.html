@@ -118,7 +118,7 @@
   });
 
 // Read markers data from data.csv
-  $.get('./ithaca_geocoded_transactions.csv', function(csvString) {
+  $.get('./ithaca_geocoded_transactions_2020.csv', function(csvString) {
 
     // Use PapaParse to convert string to array of objects
     var data = Papa.parse(csvString, {header: true, dynamicTyping: true}).data;
