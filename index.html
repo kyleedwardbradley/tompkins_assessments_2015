@@ -57,65 +57,65 @@
 
   // see more basemap options at https://leaflet-extras.github.io/leaflet-providers/preview/
 
-  // Read markers data from data.csv
-  $.get('./final_data_csv.csv', function(csvString) {
+  // // Read markers data from data.csv
+  // $.get('./final_data_csv.csv', function(csvString) {
 
-    // Use PapaParse to convert string to array of objects
-    var data = Papa.parse(csvString, {header: true, dynamicTyping: true}).data;
+  //   // Use PapaParse to convert string to array of objects
+  //   var data = Papa.parse(csvString, {header: true, dynamicTyping: true}).data;
 
-    // For each row in data, create a marker and add it to the map
-    // For each row, columns `lat`, `lon`, and `parcel_location_address` are required
-    for (var i in data) {
-      var row = data[i];
+  //   // For each row in data, create a marker and add it to the map
+  //   // For each row, columns `lat`, `lon`, and `parcel_location_address` are required
+  //   for (var i in data) {
+  //     var row = data[i];
 
-      var this_val=row.pct_2023      
-      var mycolor=''
+  //     var this_val=row.pct_2023      
+  //     var mycolor=''
       
-      if (this_val > 2) {
-        mycolor='#000000'
-      } else if (this_val > .9) {
-        mycolor='#A50026'
-      } else if (this_val > 0.7) {
-        mycolor='#DD3D2D'
-      } else if (this_val > 0.5) {
-        mycolor='#F67E4B'
-      } else if (this_val > 0.3) {
-        mycolor='#FDB366'
-      } else if (this_val > 0.1) {
-        mycolor='#FEDA8B'
-      } else if (this_val > -0.1) {
-        mycolor='#EAECCC'
-      } else if (this_val > -0.3) {
-        mycolor='#C2Е4EF'
-      } else if (this_val > -0.5) {
-        mycolor='#98CAE1'
-      } else if (this_val > -0.7) {
-        mycolor='#6EA6CD'
-      } else if (this_val > -0.9) {
-        mycolor='#4A7BB7'
-      } else if (this_val > -2) {
-        mycolor='#364B94'
-      } else {
-        // val < -1
-        mycolor='#101010'
-      }
+  //     if (this_val > 2) {
+  //       mycolor='#000000'
+  //     } else if (this_val > .9) {
+  //       mycolor='#A50026'
+  //     } else if (this_val > 0.7) {
+  //       mycolor='#DD3D2D'
+  //     } else if (this_val > 0.5) {
+  //       mycolor='#F67E4B'
+  //     } else if (this_val > 0.3) {
+  //       mycolor='#FDB366'
+  //     } else if (this_val > 0.1) {
+  //       mycolor='#FEDA8B'
+  //     } else if (this_val > -0.1) {
+  //       mycolor='#EAECCC'
+  //     } else if (this_val > -0.3) {
+  //       mycolor='#C2Е4EF'
+  //     } else if (this_val > -0.5) {
+  //       mycolor='#98CAE1'
+  //     } else if (this_val > -0.7) {
+  //       mycolor='#6EA6CD'
+  //     } else if (this_val > -0.9) {
+  //       mycolor='#4A7BB7'
+  //     } else if (this_val > -2) {
+  //       mycolor='#364B94'
+  //     } else {
+  //       // val < -1
+  //       mycolor='#101010'
+  //     }
       
-      // var circleMarker = L.circleMarker([row.lat, row.lon], {
-      //   color: mycolor
-      // }).addTo(map);
+  //     // var circleMarker = L.circleMarker([row.lat, row.lon], {
+  //     //   color: mycolor
+  //     // }).addTo(map);
       
-      var circleMarker = L.circleMarker([row.lat, row.lon], {
-        radius: 5,
-        color: mycolor,
-        weight: 0,
-        fillOpacity: 1,
-        opacity: 1
-      }).bindPopup(row.parcel_location_address + '</br>' + '% change (2015 to 2023): ' + Math.round(row.pct_2023 * 100 * 10) / 10 + '</br>' + '2015 assessment: $' + row.total_av_2015 + '</br>' + '2023 assessment: $' + row.total_av_2023);
+  //     var circleMarker = L.circleMarker([row.lat, row.lon], {
+  //       radius: 5,
+  //       color: mycolor,
+  //       weight: 0,
+  //       fillOpacity: 1,
+  //       opacity: 1
+  //     }).bindPopup(row.parcel_location_address + '</br>' + '% change (2015 to 2023): ' + Math.round(row.pct_2023 * 100 * 10) / 10 + '</br>' + '2015 assessment: $' + row.total_av_2015 + '</br>' + '2023 assessment: $' + row.total_av_2023);
     
-      circleMarker.addTo(map);
-    }
+  //     circleMarker.addTo(map);
+  //   }
 
-  });
+  // });
 
 // Read markers data from data.csv
   $.get('./ithaca_geocoded_transactions.csv', function(csvString) {
