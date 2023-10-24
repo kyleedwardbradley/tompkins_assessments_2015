@@ -16,11 +16,8 @@
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
 
-  <!-- raphy charts dependencies -->
-  // <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
-  <script src="https://raw.github.com/DmitryBaranovskiy/raphael/master/raphael-min.js"></script>
-  <!-- raphy charts -->
-  <script src="https://raw.github.com/jcarver989/raphy-charts/master/compiled/charts.min.js"></script>
+  <!-- Load Charts.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   
   <!-- Position the map with Cascading Style Sheet (CSS) -->
   <style>
@@ -116,25 +113,8 @@
         weight: 0,
         fillOpacity: 1,
         opacity: 1
-      })
-      // .bindPopup(row.parcel_location_address + '</br>' + '% change (2015 to 2023): ' + row.pct_2023 + '</br>' + '2015 assessment: $' + row.total_av_2015 + '</br>' + '2023 assessment: $' + row.total_av_2023);
-
-      var div_chart = $('<div style="width: 200px; height: 200px;"></div>');
-      var div_text = $('<div>Sample text</div>');
-      var div_img = $('<div><img src="http://www.w3schools.com/html/pic_mountain.jpg" alt="Sample image" height="100" width="100"></div>');
-      var div_main = $('<div></div>');
-      div_main.append(div_text);
-      div_main.append(div_img);
-      div_main.append(div_chart);
-      circleMarker.bindPopup(div_main[0]);
-      circleMarker.openPopup();
-      var chart = new Charts.CircleProgress(div_chart[0], "", 50, {
-          font_color: "#fff",
-          fill_color: "#222",
-          stroke_color: "#4591C9"
-        });
-
-      
+      }).bindPopup(row.parcel_location_address + '</br>' + '% change (2015 to 2023): ' + row.pct_2023 + '</br>' + '2015 assessment: $' + row.total_av_2015 + '</br>' + '2023 assessment: $' + row.total_av_2023);
+    
       circleMarker.addTo(map);
     }
 
