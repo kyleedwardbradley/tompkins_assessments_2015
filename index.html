@@ -67,7 +67,7 @@
     var data = Papa.parse(csvString, {header: true, dynamicTyping: true}).data;
 
     // For each row in data, create a marker and add it to the map
-    // For each row, columns `Latitude`, `Longitude`, and `Title` are required
+    // For each row, columns `lat`, `lon`, and `parcel_location_address` are required
     for (var i in data) {
       var row = data[i];
 
@@ -110,7 +110,24 @@
         weight: 0,
         fillOpacity: 1,
         opacity: 1
-      }).bindPopup(row.parcel_location_address + '</br>' + '% change (2015 to 2023): ' + row.pct_2023 + '</br>' + '2015 assessment: $' + row.total_av_2015 + '</br>' + '2023 assessment: $' + row.total_av_2023);
+      })
+      // .bindPopup(row.parcel_location_address + '</br>' + '% change (2015 to 2023): ' + row.pct_2023 + '</br>' + '2015 assessment: $' + row.total_av_2015 + '</br>' + '2023 assessment: $' + row.total_av_2023);
+
+      var div_chart = $('<div style="width: 200px; height: 200px;"></div>');
+      var div_text = $('<div>Sample text</div>');
+      var div_img = $('<div><img src="http://www.w3schools.com/html/pic_mountain.jpg" alt="Sample image" height="100" width="100"></div>');
+      var div_main = $('<div></div>');
+      div_main.append(div_text);
+      div_main.append(div_img);
+      div_main.append(div_chart);
+      circleMarker.bindPopup(div_main[0]);
+      circleMarker.openPopup();
+      var chart = new Charts.CircleProgress(div_chart[0], "", 50, {
+          font_color: "#fff",
+          fill_color: "#222",
+          stroke_color: "#4591C9"
+        });
+
       
       circleMarker.addTo(map);
     }
