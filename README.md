@@ -1,35 +1,24 @@
-# leaflet-map-csv
-Build a simple Leaflet map with point markers from a CSV file.
+Tompkins County, NY Tax assessments and arms-length transactions, 2015-2023
 
-![Screenshot](leaflet-map-csv.png)
+Interactive map at: https://kyleedwardbradley.github.io/tompkins_assessments_2015/
 
-## Demo
-https://handsondataviz.github.io/leaflet-map-csv/
+Data files:
 
-Sample data of select universities and colleges around CT by HandsOnDataViz.
+Filename: final_data_csv.csv
+Format: CSV
+Contains: Property assessment data for Tompkins County, 2015-2013, extracted from yearly data provided by the Tompkins County Department of Assessment
 
-## Make your own
+Example entry:
+500700_1.-1-15,-76.5,42.4635,8,650,2.9,1950000,1 James L Gibbs Dr,1950000,1950000,1950000,1950000,1950000,1950000,1950000,1950000,0,0,0,0,0,0,0,0,0
 
-1. Press **Use this template** button to create a copy of this repository in your own GitHub account.
-2. Put your point data data inside `data.csv`. The only relevant columns that will be read by the template
-are `Latitude`, `Longitude`, and `Title` (displayed in a popup). Sample data:
-```
-Title,Latitude,Longitude
-Trinity College,41.745167,-72.69263
-Wesleyan University,41.55709,-72.65691
-```
 
-For more information on customization, see [Leaflet documentation](https://leafletjs.com/).
+Columns: key,lon,lat,roll_section,prop_class,asmt_acres,total_av_2015,parcel_location_address,total_av_2016,total_av_2017,total_av_2018,total_av_2019,total_av_2020,total_av_2021,total_av_2022,total_av_2023,pct_2016,pct_2017,pct_2018,pct_2019,pct_2020,pct_2021,pct_2022,pct_2023,pct_2020_2023
 
-## HandsOnDataViz Tutorial
-https://handsondataviz.org/leaflet-maps-with-csv.html
-
-## See other Leaflet templates
-* [Simple Leaflet map](https://github.com/HandsOnDataViz/leaflet-map-simple)
-* [Leaflet map with open data APIs](https://github.com/HandsOnDataViz/leaflet-maps-open-data-apis)
-* [Leaflet map with data from Socrata](https://github.com/HandsOnDataViz/leaflet-socrata)
-* [Leaflet polygon map with tabs](https://github.com/HandsOnDataViz/leaflet-map-polygon-tabs)
-* [Leaflet heatmap](https://github.com/HandsOnDataViz/leaflet-heatmap)
-* [Searcheable Map Template](https://github.com/HandsOnDataViz/searchable-map-template-csv)
-* [Leaflet Maps with Google Sheets](https://github.com/HandsOnDataViz/leaflet-maps-with-google-sheets)
-* [Leaflet Storymaps with Google Sheets](https://github.com/HandsOnDataViz/leaflet-storymaps-with-google-sheets)
+key: property identification code
+lon/lat: location (decimal degrees)
+roll_section: tax roll section
+prop_class: tax property class
+asmt_acres: assessment acreage (acres)
+total_av_YYYY: assessed value in year YYYY (USD)
+parcel_location_address: address
+pct_YYYY: (total_av_YYYY - total_av_2015)/total_av_2015 * 100  (percent)
