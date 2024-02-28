@@ -163,13 +163,13 @@
 		const labels = [];
 		let from, to;
 
-    labels.push(`<i style="background:#cc0f7c"></i>negative`);
+    labels.push(`<i style="background:#cc0f7c"></i>decrease`);
 
 		for (let i = 0; i < grades.length; i++) {
 			from = grades[i];
 			to = grades[i + 1];
 
-			labels.push(`<i style="background:${getColor(from + 1)}"></i>` ${from}`&ndash;`${to}' %');
+			labels.push(`<i style="background:${getColor(from + 1)}"></i> ${from}%&ndash;${to}%`);
 		}
     labels.push(`<i style="background:#ffffff"></i>\>100 %`);
 
