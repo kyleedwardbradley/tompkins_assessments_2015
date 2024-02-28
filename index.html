@@ -89,7 +89,7 @@
         mycolor='#e0ecf4'
       } else {
         // val < 0
-        mycolor='#ffffff'
+        mycolor='#fffee0'
       }
     
 
@@ -151,7 +151,7 @@
            d > 60  ? '#8c6bb1' :
            d > 40  ? '#8c96c6' :
            d > 20  ? '#9ebcda' :
-           d > 0   ? '#e0ecf4' : '#ffffff';
+           d > 0   ? '#e0ecf4' : '#fffee0';
   }
 
 	const legend = L.control({position: 'bottomright'});
@@ -164,7 +164,7 @@
 		let from, to;
 
     labels.push(`<b>Percent change 2015-2023</b>`);  
-    labels.push(`<i style="background:#ffffff"></i>negative change`);
+    labels.push(`<i style="background:#fffee0"></i>negative change`);
 
 		for (let i = 0; i < grades.length-1; i++) {
 			from = grades[i];
