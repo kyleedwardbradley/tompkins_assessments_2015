@@ -4,6 +4,7 @@ Interactive map at: https://kyleedwardbradley.github.io/tompkins_assessments_201
 
 Data files:
 
+----------------------------------------------------------
 Filename: final_data_csv.csv
 Format: CSV
 Contains: Property assessment data for Tompkins County, 2015-2013, extracted from yearly data provided by the Tompkins County Department of Assessment
@@ -22,3 +23,20 @@ asmt_acres: assessment acreage (acres)
 total_av_YYYY: assessed value in year YYYY (USD)
 parcel_location_address: address
 pct_YYYY: (total_av_YYYY - total_av_2015)/total_av_2015 * 100  (percent)
+
+----------------------------------------------------------
+
+Filename: ithaca_geocoded_transactions.csv
+Format: CSV
+Contains: Arms-length property transactions since 2015, City of Ithaca, fairly poorly geocoded using US Census Bureau online tool
+
+Example entry:
+Ithaca,821 CLIFF ST,(Ithaca None),None,945000,Feb. 16 2015,PRIMARY DEVELOPERS INC,AMER.BLUE SKY HOLD.LLC,Standard (arms length),-76.51797132899998,42.450144918000035
+
+Columns: City,Address,IDZip,Zip,Price,Date,Seller,Buyer,Transaction,Longitude,Latitude
+
+----------------------------------------------------------
+
+Filename: ithaca_geocoded_transactions_2020.csv
+Format: CSV
+Contains: Same information as ithaca_geocoded_transactions.csv, beginning in 2020
