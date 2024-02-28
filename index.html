@@ -90,15 +90,6 @@
         mycolor='#101010'
       }
     
-      #f7fcfd
-#
-#
-#
-#
-#
-#
-#
-#
 
       // var circleMarker = L.circleMarker([row.lat, row.lon], {
       //   color: mycolor
@@ -123,6 +114,8 @@
     
       circleMarker.addTo(map);
     }
+
+    
 
   });
 
@@ -150,6 +143,34 @@
 
   });
     
+  function getColor(d) {
+    return d > 80  ? '#88419d' :
+           d > 60  ? '#8c6bb1' :
+           d > 40   ? '#8c96c6' :
+           d > 20   ? '#9ebcda' :
+           d > 0   ? '#e0ecf4' ;
+  }
+
+  var legend = L.control({position: 'bottomright'});
+
+  legend.onAdd = function (map) {
+
+      var div = L.DomUtil.create('div', 'info legend'),
+      grades = [0, 20, 40, 60, 80, 100],
+      labels = [];
+
+      // loop through our density intervals and generate a label with a colored square for each interval
+      for (var i = 0; i < grades.length; i++) {
+          div.innerHTML +=
+              '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
+              grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+  }
+
+  return div;
+  };
+
+  legend.addTo(map);
+
   map.attributionControl.setPrefix(
     'View <a href="https://github.com/HandsOnDataViz/leaflet-map-csv" target="_blank">code on GitHub</a>'
   );
