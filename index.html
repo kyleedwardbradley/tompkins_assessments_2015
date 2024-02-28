@@ -159,19 +159,19 @@
 	legend.onAdd = function (map) {
 
 		const div = L.DomUtil.create('div', 'info legend');
-		const grades = [0, 20, 40, 60, 80, 100];
+		const grades = [0, 20, 40, 60, 80, 100, 200];
 		const labels = [];
 		let from, to;
 
-    labels.push(`<i style="background:#cc0f7c"></i>decrease`);
+    labels.push(`<i style="background:#ffffff"></i>decrease`);
 
-		for (let i = 0; i < grades.length; i++) {
+		for (let i = 0; i < grades.length-1; i++) {
 			from = grades[i];
 			to = grades[i + 1];
 
 			labels.push(`<i style="background:${getColor(from + 1)}"></i> ${from}%&ndash;${to}%`);
 		}
-    labels.push(`<i style="background:#ffffff"></i>\>100 %`);
+    labels.push(`<i style="background:#000000"></i>\>200 %`);
 
 		div.innerHTML = labels.join('<br>');
 		return div;
